@@ -72,6 +72,14 @@ public class MapActivity extends Activity implements MapContract.IMapView{
         //setup for activity
         init();
 
+        if(getIntent().getExtras() != null && getIntent().getExtras().getInt(String.valueOf(R.string.corrected_replay))==1){
+            Intent intent = new Intent(MapActivity.this, ScenarioOverActivity.class);
+            intent.putExtra(String.valueOf(R.string.corrected_replay), 1);
+            startActivity(intent);
+            overridePendingTransition(R.animator.fade_in_custom, R.animator.fade_out_custom);
+
+        }
+
         // initialize presneter
         MapPresenter presenter = new MapPresenter(dataSource, this);
 

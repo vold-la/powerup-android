@@ -47,6 +47,7 @@ public class ScenarioOverActivity extends AppCompatActivity implements ScenarioO
     public static int scenarioActivityDone;
     private DataSource dataSource;
     public Scenario scene, prevScene;
+    public int flag;
 
     //Todo check preferences and shift it to pref file
     private final String PREF_NAME_SCENARIO = "SCENARIO_OVER_DIALOG";
@@ -105,6 +106,12 @@ public class ScenarioOverActivity extends AppCompatActivity implements ScenarioO
             continueButton.setOnClickListener(null);
         }
 
+        if(getIntent().getExtras()!=null && getIntent().getExtras().getInt(String.valueOf(R.string.corrected_replay))==1) {
+            startActivity(new Intent(ScenarioOverActivity.this, GameActivity.class));
+            overridePendingTransition(R.animator.fade_in_custom, R.animator.fade_out_custom);
+
+
+        }
     }
 
     private void init() {
@@ -149,6 +156,7 @@ public class ScenarioOverActivity extends AppCompatActivity implements ScenarioO
         } else {
             SessionHistory.currSessionID = SessionHistory.prevSessionID;
             scenarioActivityDone = 0;
+            flag=1;
         }                //Check that reducing points does not lead to negetive value
         if(SessionHistory.totalPoints - SessionHistory.currScenePoints >= 0)
             SessionHistory.totalPoints -= SessionHistory.currScenePoints;
@@ -157,8 +165,16 @@ public class ScenarioOverActivity extends AppCompatActivity implements ScenarioO
         dataSource.resetCompleted(SessionHistory.currSessionID);
         dataSource.resetReplayed(SessionHistory.currSessionID);
         scenarioOverActivityInstance.finish();
-        startActivity(new Intent(ScenarioOverActivity.this, GameActivity.class));
-        overridePendingTransition(R.animator.fade_in_custom, R.animator.fade_out_custom);
+        if(flag==1){
+            Intent intent = new Intent(ScenarioOverActivity.this, MapActivity.class);
+            intent.putExtra(String.valueOf(R.string.corrected_replay), flag);
+            startActivity(intent);
+            overridePendingTransition(R.animator.fade_in_custom, R.animator.fade_out_custom);
+        }
+        else{
+            startActivity(new Intent(ScenarioOverActivity.this, GameActivity.class));
+            overridePendingTransition(R.animator.fade_in_custom, R.animator.fade_out_custom);
+        }
     }
     /**
      * Goes back to the map when user presses back button
