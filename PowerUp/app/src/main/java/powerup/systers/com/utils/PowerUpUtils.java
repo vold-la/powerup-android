@@ -54,9 +54,11 @@ public class PowerUpUtils {
             R.id.imageView2, R.id.imageView20, R.id.imageView13, R.id.imageView18, R.id.imageView23, R.id.imageView4, R.id.imageView8, R.id.imageView15, R.id.imageView21,
             R.id.imageView24, R.id.imageView3, R.id.imageView10, R.id.imageView17, R.id.imageView14, R.id.imageView5, R.id.imageView9, R.id.imageView6, R.id.imageView11};
 
-    public static final String[][] ROUNDS_PROS_CONS = {{"Round 1 Pro 1 ", "Round 1 Pro 2", "Round 1 Con 1"},
-            {"Round 2 Pro 1 ", "Round 2 Pro 2", "Round 2 Con 1"},
-            {"Round 3 Pro 1 ", "Round 3 Pro 2", "Round 3 Con 1"}};
+    public static final int[][] ROUNDS_PROS_CONS = {{(R.string.Round1_Pro1),(R.string.Round1_Pro2), (R.string.Round1_con1)},
+            {(R.string.Round2_Pro1), (R.string.Round2_Pro2), (R.string.Round2_con2)},
+            {(R.string.Round3_Pro1), (R.string.Round3_Pro2), (R.string.Round3_con3)}};
+
+
     public static final String[][] SWIM_SINK_QUESTION_ANSWERS = {{"Test Ques 1: \n Answer=F", "F"}, {"Test Ques 2: \n Answer=T", "T"}, {"Test Ques 3: \n Answer=T", "T"}, {"Test Ques 4: \n Answer=F", "F"}, {"Test Ques 5: \n Answer=F", "F"}};
     public static final int[] SWIM_TUTS = {R.drawable.swim_tut1, R.drawable.swim_tut2, R.drawable.swim_tut3};
     public static final int[] SCENARIO_BACKGROUNDS = {R.drawable.background, R.drawable.background, R.drawable.background, R.drawable.home_bg, R.drawable.classroom, R.drawable.hospital_bg, R.drawable.library, R.drawable.home_bg, R.drawable.classroom, R.drawable.hospital_bg, R.drawable.library};

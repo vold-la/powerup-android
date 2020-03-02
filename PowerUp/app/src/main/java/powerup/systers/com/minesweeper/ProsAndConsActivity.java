@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import java.util.Random;
 
 import powerup.systers.com.ui.map_screen.MapActivity;
 import powerup.systers.com.R;
@@ -16,10 +17,13 @@ public class ProsAndConsActivity extends AppCompatActivity {
     public int completedRounds;
     public int score;
     public TextView proOne, proTwo, conOne;
+    Random rand;
+    int rand_int;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.minesweeper_pros_cons);
         proOne = (TextView) findViewById(R.id.pro_one);
         proTwo = (TextView) findViewById(R.id.pro_two);
@@ -31,9 +35,11 @@ public class ProsAndConsActivity extends AppCompatActivity {
     }
 
     public void setTexts(){
-        proOne.setText(PowerUpUtils.ROUNDS_PROS_CONS[completedRounds - 1][0]);
-        proTwo.setText(PowerUpUtils.ROUNDS_PROS_CONS[completedRounds - 1][1]);
-        conOne.setText(PowerUpUtils.ROUNDS_PROS_CONS[completedRounds - 1][2]);
+         rand = new Random();
+        rand_int = rand.nextInt(3);
+        proOne.setText(PowerUpUtils.ROUNDS_PROS_CONS[rand_int][0]);
+        proTwo.setText(PowerUpUtils.ROUNDS_PROS_CONS[rand_int][1]);
+        conOne.setText(PowerUpUtils.ROUNDS_PROS_CONS[rand_int][2]);
     }
 
     /**

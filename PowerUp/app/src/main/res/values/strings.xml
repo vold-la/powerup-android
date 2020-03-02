@@ -150,4 +150,13 @@
     <string name="cheapest_contraceptive"><![CDATA[=> Cheapest Contraceptive]]></string>
     <string name="no_protection_against_stds"><![CDATA[=> No protection against STDs]]></string>
     <string name="str_5">5</string>
+    <string name="Round1_Pro1">No prescription is required to buy.</string>
+    <string name="Round1_Pro2">cheap and readily available among any contraceptive.</string>
+    <string name="Round1_con1">It has expiry date, always check it.</string>
+    <string name="Round2_Pro1">Require no skill to use, unlike many other methods </string>
+    <string name="Round2_Pro2">It doesnot alter the fertility of user(s)</string>
+    <string name="Round2_con2">Some people may be allergic to it,check before use</string>
+    <string name="Round3_Pro1">Helps in preventing STD(HIV,crabs,chlamydia etc)</string>
+    <string name="Round3_Pro2">Can be used as backup with any other method to increase efficiency. </string>
+    <string name="Round3_con3">There is chance of breakage due to friction.Hence,use carefully</string>
 </resources>

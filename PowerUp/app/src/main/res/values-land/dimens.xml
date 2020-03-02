@@ -208,7 +208,7 @@
     <dimen name="back_height">100dp</dimen>
     <dimen name="back_marginBottom">10dp</dimen>
     <dimen name="pros_cons_textSize">20sp</dimen>
-    <dimen name="pros_cons_paddingRight">20dp</dimen>
+    <dimen name="pros_cons_paddingRight">5dp</dimen>
     <dimen name="pros_cons_paddingTop">10dp</dimen>
     <dimen name="pointer_width">75dp</dimen>
     <dimen name="pointer_height">27dp</dimen>
